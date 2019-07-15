@@ -6,16 +6,16 @@
 </head>
 
 <body>
-<h1>The Phychic Game!</h1>
-<h3>Guess what letter im thinking of...</h3>
+    <h1>The Phychic Game!</h1>
+    <h3>Guess what letter im thinking of...</h3>
 <p class="win">Wins:</p>
 <p class="lose">Loses:</p>
 <p class="howmany">Guesses left:</p>
 <p class="sofar">Your guesses so far:</p>
 <script type="text/javascript">
 
-var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var yourguess;
+var computerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var numGuesses = 10;
 var guesscount = 0;
 var wins = 0;
 var losses = 0;
@@ -23,8 +23,44 @@ var losses = 0;
 document.onkeypress = function(event) {
 
     var theirguess = event.key;
+    
     var answer = letters[Math.floor(Math.random() + letters.length)];
 
+    var userOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+		 	
+
+             if (options.indexOf(yourguess) > -1) {
+ 
+                 if (theirguess === computerChoice) {
+                     wins++;
+                     numGuesses = 10;
+                     guesscount = [];
+                 }
+ 
+                 if (theirguess != computerChoice) {
+                     numGuesses --;
+                     guesscount.push(theirguess);
+                 }
+ 
+                 if (numGuesses === 0) {
+ 
+                 numGuesses = 9;
+                 losses ++;
+                 guesscount = [];
+ 
+                 
+             }
+ 
+             var html = 
+             "<h1> The Psychic Game </h1>" +
+             "<p>Guess what letter I'm thinking of!</p>" +
+             "<p>Wins: " + wins + "</p>" +
+             "<p>Losses: " + losses + "</p>" +
+             "<p>Guesses Left: " + numGuesses + "</p>" +
+             "<p>Your Guesses so far: " + guesscount.join(", ") + "</p>";
+ 
+             document.querySelector("#game").innerHTML = html;
+ 
 
 
 
