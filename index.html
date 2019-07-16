@@ -6,8 +6,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
-<body background="assets\images\space.jpg">
-    <h1>The Phychic Game!</h1>
+<body background="assets\images\space.jpg" style="background-repeat: no-repeat; background-size: 100%;">
+    <h1>Out Of This World Phychic Game!</h1>
     <h3>Guess what letter im thinking of...</h3>
 <p class="win">Wins: </p>
 <p class="lose">Loses: </p>
@@ -17,7 +17,7 @@
 
 var computerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numGuesses = 10;
-var guesscount = 0;
+var guessCount = 0;
 var wins = 0;
 var losses = 0;
 
@@ -48,7 +48,6 @@ document.onkeypress = function(event) {
                  numGuesses = 9;
                  losses ++;
                  guessCount = [];
- 
                  
              });
  
