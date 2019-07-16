@@ -3,15 +3,16 @@
 <head>
     <title>The Phychic Game!</title>
     <meta charset="UFT-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
-<body>
+<body background="assets\images\space.jpg">
     <h1>The Phychic Game!</h1>
     <h3>Guess what letter im thinking of...</h3>
-<p class="win">Wins:</p>
-<p class="lose">Loses:</p>
-<p class="howmany">Guesses left:</p>
-<p class="sofar">Your guesses so far:</p>
+<p class="win">Wins: </p>
+<p class="lose">Loses: </p>
+<p class="howmany">Guesses left: </p>
+<p class="sofar">Your guesses so far: </p>
 <script type="text/javascript">
 
 var computerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -34,35 +35,31 @@ document.onkeypress = function(event) {
                  if (theirguess === computerChoice) {
                      wins++;
                      numGuesses = 10;
-                     guesscount = [];
+                     guessCount = [];
                  }
  
                  if (theirguess != computerChoice) {
                      numGuesses --;
-                     guesscount.push(theirguess);
+                     guessCount.push(theirguess);
                  }
  
                  if (numGuesses === 0) {
  
                  numGuesses = 9;
                  losses ++;
-                 guesscount = [];
+                 guessCount = [];
  
                  
-             }
+             });
  
              var html = 
              "<h1> The Psychic Game </h1>" +
-             "<p>Guess what letter I'm thinking of!</p>" +
+             "<h3>Guess what letter I'm thinking of...</h3>" +
              "<p>Wins: " + wins + "</p>" +
              "<p>Losses: " + losses + "</p>" +
              "<p>Guesses Left: " + numGuesses + "</p>" +
-             "<p>Your Guesses so far: " + guesscount.join(", ") + "</p>";
+             "<p>Your Guesses so far: " + guessCount.push (", ") + "</p>";
  
-             document.querySelector("#game").innerHTML = html;
- 
-
-
 
 }
 
