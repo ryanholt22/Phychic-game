@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <title>The Phychic Game!</title>
     <meta charset="UFT-8">
@@ -9,60 +10,67 @@
 <body background="assets\images\space.jpg" style="background-repeat: no-repeat; background-size: 100%;">
     <h1>Out Of This World Phychic Game!</h1>
     <h3>Guess what letter im thinking of...</h3>
-<p class="win">Wins: </p>
-<p class="lose">Loses: </p>
-<p class="howmany">Guesses left: </p>
-<p class="sofar">Your guesses so far: </p>
-<script type="text/javascript">
+    <p class="win">Wins: </p>
+    <p class="lose">Loses: </p>
+    <p class="howmany">Guesses left: </p>
+    <p class="sofar">Your guesses so far: </p>
+    <script type="text/javascript">
 
-var computerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var numGuesses = 10;
-var guessCount = 0;
-var wins = 0;
-var losses = 0;
+        var computerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var numGuesses = 10;
+        var guessCount = 0;
+        var wins = 0;
+        var losses = 0;
+        var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var whateveryoulike = [];
+        document.onkeypress = function (event) {
+            var i = Math.floor(Math.random() * computerChoice.length);
+            whateveryoulike = computerChoice[i];
+            
 
-document.onkeypress = function(event) {
+            var theirguess = event.key;
 
-    var theirguess = event.key;
-    
-    var answer = letters[Math.floor(Math.random() + letters.length)];
+            var answer = letters[Math.floor(Math.random() + letters.length)];
 
-    var userOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-		 	
+            var userOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+            
 
-             if (options.indexOf(yourguess) > -1) {
- 
-                 if (theirguess === computerChoice) {
-                     wins++;
-                     numGuesses = 10;
-                     guessCount = [];
-                 }
- 
-                 if (theirguess != computerChoice) {
-                     numGuesses --;
-                     guessCount.push(theirguess);
-                 }
- 
-                 if (numGuesses === 0) {
- 
-                 numGuesses = 9;
-                 losses ++;
-                 guessCount = [];
-                 
-             });
- 
-             var html = 
-             "<h1> The Psychic Game </h1>" +
-             "<h3>Guess what letter I'm thinking of...</h3>" +
-             "<p>Wins: " + wins + "</p>" +
-             "<p>Losses: " + losses + "</p>" +
-             "<p>Guesses Left: " + numGuesses + "</p>" +
-             "<p>Your Guesses so far: " + guessCount.push (", ") + "</p>";
- 
+            if (userOptions.indexOf(theirguess) > -1) {
+                //if your guess is equal too computerchoice, add one to win.
+                if (theirguess === computerChoice) {
+                    wins++;
+                    numGuesses = 10;
+                    guessCount = 0;
+                }
 
-}
+                if (theirguess != computerChoice) {
+                    numGuesses--;
+                    guessCount++;
+                    whateveryoulike.push(theirguess);
+                }
 
-    
-</script>
+                if (numGuesses === 0) {
+
+                    numGuesses = 9;
+                    losses++;
+                    guessCount = [];
+
+                };
+
+                var html =
+                    "<h1> The Psychic Game </h1>" +
+                    "<h3>Guess what letter I'm thinking of...</h3>" +
+                    "<p>Wins: " + wins + "</p>" +
+                    "<p>Losses: " + losses + "</p>" +
+                    "<p>Guesses Left: " + numGuesses + "</p>" +
+                    "<p>Your Guesses so far: " + whateveryoulike + "</p>";
+
+
+            }
+        }
+
+
+    </script>
 </body>
+
 </html>
