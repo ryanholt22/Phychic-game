@@ -23,10 +23,12 @@
         var losses = 0;
         var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         var whateveryoulike = [];
+        // below me is a string of your answer, this is the part i have not completed yet, or well the part that doesnt work
+        var answers = "";
         document.onkeypress = function (event) {
             var i = Math.floor(Math.random() * computerChoice.length);
-            whateveryoulike = computerChoice[i];
-            
+            answers = computerChoice[i];
+            //this is the end of the part of code that doesnt work.
 
             var theirguess = event.key;
 
@@ -42,7 +44,7 @@
                     numGuesses = 10;
                     guessCount = 0;
                 }
-
+                //if your guess is incorrect 
                 if (theirguess != computerChoice) {
                     numGuesses--;
                     guessCount++;
@@ -50,7 +52,7 @@
                 }
 
                 if (numGuesses === 0) {
-
+                //if your guess is incorrect you add one to losses and use up a guess.
                     numGuesses = 9;
                     losses++;
                     guessCount = [];
